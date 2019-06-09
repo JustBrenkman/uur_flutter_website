@@ -1,0 +1,30 @@
+[
+  {
+    "fonts":
+    [
+      {"asset":"fonts/MaterialIcons-Regular.ttf"}
+    ],
+    "family":"MaterialIcons"
+  },
+  {
+    "fonts":
+    [
+      {"asset":"fonts/fa-brands-400.otf"}
+    ],
+    "family":"FontAwesomeBrands"
+  },
+  {
+    "fonts":
+    [
+      {"asset":"fonts/fa-regular-400.otf"}
+    ],
+    "family":"FontAwesomeRegular"
+  },
+  {
+    "fonts":
+    [
+      {"asset":"fonts/fa-solid-900.otf"}
+    ],
+    "family":"FontAwesomeSolid"
+  }
+]

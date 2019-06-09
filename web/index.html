@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script defer src="main.dart.js" type="application/javascript"></script>
+</head>
+<body>
+
+<div id="loading">
+  <style>
+    #loading {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      text-transform: uppercase;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    }
+    body {
+      background: #eceff1;
+      margin: 0;
+      padding: 0;
+    }
+    @keyframes dots {
+      50% {
+        transform: translateY(-.2rem);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+    .d {
+      display: inline-block;
+      animation: dots 1.5s ease-out infinite;
+    }
+    .d-2 {
+      animation-delay: .5s;
+    }
+    .d-3 {
+      animation-delay: 1s;
+    }
+  </style>
+  <img src="assets/logo/uur_logo.png" alt="UUR logo">
+  <div>
+    <p></p>
+  </div>
+  <div>Loading<span class="d">.</span><span class="d d-2">.</span><span class="d d-3">.</span></div>
+  <!--<div class="app-loading">-->
+  <!--<div class="logo"></div>-->
+  <!--<svg class="spinner" viewBox="25 25 50 50">-->
+  <!--<circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"></circle>-->
+  <!--</svg>-->
+  <!--</div>-->
+</div>
+
+</body>
+<script>
+  // function reset() {
+  //   var load = document.getElementById("loading");
+  //   load.remove();
+  // }
+</script>
+</html>
