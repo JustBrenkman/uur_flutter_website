@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fbca859b-1d29-44cc-9141-f9a458520a47" name="Default Changelist" comment="" />
+    <list default="true" id="fbca859b-1d29-44cc-9141-f9a458520a47" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/components/uur_ui_components.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/assets/logo/uur_logo.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/pages/sign_in_up_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/sign_in_up_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.html" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,23 +33,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Roaming/Pub/Cache/git/flutter_web-69acfd97c5a7bf0605e9a01df7749716ceb1707f/packages/flutter_web/lib/src/material/checkbox_list_tile.dart">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/src/pages/sign_in_up_page.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="539">
-              <caret line="203" column="34" selection-start-line="203" selection-start-column="29" selection-end-line="203" selection-end-column="34" />
+            <state relative-caret-position="419">
+              <caret line="193" column="42" selection-start-line="193" selection-start-column="42" selection-end-line="193" selection-end-column="42" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lib/src/pages/sign_in_up_page.dart">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/src/components/uur_ui_components.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="39" column="25" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
-              <folding>
-                <element signature="e#0#43#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="275">
+              <caret line="49" column="22" selection-start-line="49" selection-start-column="6" selection-end-line="49" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -61,6 +68,9 @@
       <find>leading</find>
       <find>build(</find>
     </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -95,10 +105,11 @@
         <option value="$PROJECT_DIR$/lib/src/pages/teams_page.dart" />
         <option value="$PROJECT_DIR$/lib/src/managers/page_manager.dart" />
         <option value="$PROJECT_DIR$/lib/src/server.dart" />
-        <option value="$PROJECT_DIR$/web/index.html" />
         <option value="$PROJECT_DIR$/lib/src/managers/data_manager.dart" />
         <option value="$PROJECT_DIR$/lib/src/pages/login_page.dart" />
         <option value="$PROJECT_DIR$/lib/main.dart" />
+        <option value="$PROJECT_DIR$/web/index.html" />
+        <option value="$PROJECT_DIR$/lib/src/components/uur_ui_components.dart" />
         <option value="$PROJECT_DIR$/lib/src/pages/sign_in_up_page.dart" />
       </list>
     </option>
@@ -109,6 +120,7 @@
     <option name="width" value="976" />
     <option name="height" value="1096" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -137,6 +149,13 @@
               <item name="uur_flutter_website" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="uur_flutter_website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="uur_flutter_website" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="managers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -145,6 +164,11 @@
               <item name="lib" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="uur_flutter_website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="uur_flutter_website" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -155,6 +179,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -210,18 +235,18 @@
       <workItem from="1559916139409" duration="17829000" />
       <workItem from="1559945421579" duration="414000" />
       <workItem from="1559958408835" duration="9832000" />
-      <workItem from="1560091525634" duration="2688000" />
+      <workItem from="1560091525634" duration="4590000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49857000" />
+    <option name="totallyTimeSpent" value="51759000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26066098" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26066098" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -310,13 +335,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/AppData/Roaming/Pub/Cache/git/flutter_web-69acfd97c5a7bf0605e9a01df7749716ceb1707f/packages/flutter_web/lib/src/material/colors.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="822" column="29" lean-forward="true" selection-start-line="822" selection-start-column="29" selection-end-line="822" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Roaming/Pub/Cache/git/flutter_web-69acfd97c5a7bf0605e9a01df7749716ceb1707f/packages/flutter_web/lib/src/material/app_bar.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8867">
@@ -612,13 +630,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Roaming/Pub/Cache/git/flutter_web-69acfd97c5a7bf0605e9a01df7749716ceb1707f/packages/flutter_web/lib/src/material/theme_data.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2051">
@@ -682,6 +693,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="5" column="71" lean-forward="true" selection-start-line="5" selection-start-column="71" selection-end-line="5" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Roaming/Pub/Cache/git/flutter_web-69acfd97c5a7bf0605e9a01df7749716ceb1707f/packages/flutter_web/lib/src/material/checkbox_list_tile.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1163">
+          <caret line="199" column="23" lean-forward="true" selection-start-line="199" selection-start-column="23" selection-end-line="199" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/main.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="515">
@@ -692,17 +717,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Roaming/Pub/Cache/git/flutter_web-69acfd97c5a7bf0605e9a01df7749716ceb1707f/packages/flutter_web/lib/src/material/checkbox_list_tile.dart">
+    <entry file="file://$PROJECT_DIR$/lib/src/components/uur_ui_components.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="539">
-          <caret line="203" column="34" selection-start-line="203" selection-start-column="29" selection-end-line="203" selection-end-column="34" />
+        <state relative-caret-position="275">
+          <caret line="49" column="22" selection-start-line="49" selection-start-column="6" selection-end-line="49" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/src/pages/sign_in_up_page.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="39" column="25" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
+        <state relative-caret-position="419">
+          <caret line="193" column="42" selection-start-line="193" selection-start-column="42" selection-end-line="193" selection-end-column="42" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
           </folding>
