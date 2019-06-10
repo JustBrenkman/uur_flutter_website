@@ -24,6 +24,7 @@ class DataManager with ChangeNotifier {
 
   void setLocalStorageEntry(String name, String entry) {
     window.localStorage[name] = entry;
+    notifyListeners();
   }
 
   String getLocalStorageEntry(String name) {

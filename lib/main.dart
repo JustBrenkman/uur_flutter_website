@@ -11,7 +11,7 @@ import 'package:uur_flutter_website/src/pages/sign_in_up_page.dart';
 
 void main() {
   DataManager _manager = DataManager.instance;
-//  _manager.loadResources();
+  _manager.loadResources();
   window.document.querySelector("#loading").remove();
 //  _manager.removeLocalStorageEntry('auth_token');
   runApp(
@@ -33,16 +33,21 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Underwater Robotics',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-//        brightness: Brightness.dark,
-        primaryColor: Colors.indigo,
-        accentColor: Colors.pinkAccent,
-        primarySwatch: Colors.indigo,
-      ),
-      home: (_manager.isAuthenticated()) ? MyHomePage(title: 'Utah Underwater Robotics') : LoginPage(),
+    return Consumer<DataManager>(
+      builder: (BuildContext context, DataManager value, Widget child) {
+        return MaterialApp(
+          title: 'Underwater Robotics',
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            brightness: _manager.getLocalStorageEntry('dark_mode') == 'true' ? Brightness.dark : Brightness.light,
+            primaryColor: Colors.indigo,
+            accentColor: Colors.pinkAccent,
+            primarySwatch: Colors.indigo,
+            primaryColorDark: Colors.indigo,
+          ),
+          home: (_manager.isAuthenticated()) ? MyHomePage(title: 'Utah Underwater Robotics') : LoginPage(),
+        );
+    },
     );
   }
 }
@@ -77,7 +82,20 @@ class MyHomePage extends StatelessWidget {
 
   List<Widget> _getActions(BuildContext context, StateManager state) {
     List<Widget> exp = <Widget>[
-      IconButton(icon: Icon(Icons.person), onPressed: () {},),
+      Consumer<DataManager>(
+        builder: (BuildContext context, DataManager _manager, Widget child) {
+          return Switch(
+            value: _manager.getLocalStorageEntry('dark_mode') == 'true' ?? false,
+            onChanged: (bool value) {
+              _manager.setLocalStorageEntry('dark_mode', value.toString());
+            },
+          );
+        },
+      ),
+      IconButton(icon: CircleAvatar(
+        backgroundColor: Colors.brown.shade800,
+        child: Text('BB'),
+      ), onPressed: () {},),
       IconButton(icon: Icon(Icons.notifications), onPressed: () {},),
       IconButton(icon: Icon(FontAwesomeIcons.signOutAlt), onPressed: () {
         DataManager.instance.removeLocalStorageEntry('auth_token');
@@ -92,7 +110,10 @@ class MyHomePage extends StatelessWidget {
           const PopupMenuItem(
             value: Actions.PROFILE,
             child: ListTile(
-              leading: Icon(Icons.person),
+              leading: CircleAvatar(
+                backgroundColor: Colors.brown,
+                child: Text('BB'),
+              ),
               title: Text("Profile"),
             ),
           ),
@@ -108,6 +129,22 @@ class MyHomePage extends StatelessWidget {
             child: ListTile(
               leading: Icon(FontAwesomeIcons.signInAlt),
               title: Text("Signout"),
+            ),
+          ),
+          PopupMenuItem(
+            value: Actions.NOTIFICATIONS,
+            child: ListTile(
+              leading: Consumer<DataManager>(
+                builder: (BuildContext context, DataManager _manager, Widget child) {
+                  return Switch(
+                    value: _manager.getLocalStorageEntry('dark_mode') == 'true' ?? false,
+                    onChanged: (bool value) {
+                      _manager.setLocalStorageEntry('dark_mode', value.toString());
+                    },
+                  );
+                },
+              ),
+              title: Text("Dark Mode"),
             ),
           ),
         ],

@@ -1,3 +1,4 @@
+import 'package:flutter_web/gestures.dart';
 import 'package:flutter_web/material.dart';
 
 class CheckboxWithLabel extends StatelessWidget {
@@ -70,6 +71,7 @@ class TextFormFieldUUR extends StatelessWidget {
             labelText: labelText,
             border: InputBorder.none,
             focusedBorder: OutlineInputBorder(
+//              borderRadius: BorderRadius.circular(8),
                 borderSide: BorderSide(color: Colors.indigo)
             )
         ),
@@ -77,4 +79,93 @@ class TextFormFieldUUR extends StatelessWidget {
     );
   }
 
+}
+
+class MediumButton extends StatelessWidget {
+  final EdgeInsets padding;
+  final VoidCallback onPressed;
+  final Widget child;
+  final Color color;
+  final bool secondary;
+
+  const MediumButton({Key key, this.padding = const EdgeInsets.all(8), this.onPressed, this.child, this.color, this.secondary = false}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    Color primary = !secondary ? Theme.of(context).primaryColor : Theme.of(context).primaryColor.withAlpha(100);
+    // TODO: implement build
+    return Padding(
+      padding: padding,
+      child: MaterialButton(
+        onPressed: onPressed,
+        height: 45,
+        elevation: 1.0,
+        color: color == null ? primary : color,
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(8))
+        ),
+        child: ConstrainedBox(
+            child: Center(
+              child: child,
+            ),
+          constraints: BoxConstraints(
+            minWidth: 50,
+            maxWidth: 150
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class HyperLink extends StatelessWidget {
+  final String text;
+  final VoidCallback onTap;
+
+  const HyperLink({Key key, this.text, this.onTap}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return RichText(
+      text: new TextSpan(
+        text: text ?? 'Hyperlink',
+        style: new TextStyle(color: Colors.blue,),
+        recognizer: new TapGestureRecognizer()
+          ..onTap = onTap,
+      ),
+    );
+  }
+}
+
+class UURDropDownButton<T> extends StatelessWidget {
+  final List<DropdownMenuItem<T>> items;
+  final T value;
+  final ValueChanged<T> onChanged;
+  final String hint;
+
+  const UURDropDownButton({Key key, this.items, this.value, this.onChanged, this.hint}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: DropdownButtonHideUnderline(
+        child: Container(
+          height: 60,
+          decoration: BoxDecoration(
+            color: Colors.indigo.withAlpha(20),
+            borderRadius: BorderRadius.all(Radius.circular(4))
+          ),
+          child: DropdownButton<T>(
+            hint: Text("  " + (hint ?? "")),
+            value: value,
+            items: items,
+            onChanged: onChanged,
+          ),
+        ),
+      ),
+    );
+  }
 }
