@@ -10,10 +10,10 @@ import 'package:uur_flutter_website/src/managers/data_manager.dart';
 import 'package:uur_flutter_website/src/pages/sign_in_up_page.dart';
 
 void main() {
-  DataManager _manager = DataManager();
-  _manager.loadResources();
+  DataManager _manager = DataManager.instance;
+//  _manager.loadResources();
   window.document.querySelector("#loading").remove();
-  _manager.removeLocalStorageEntry('auth_token');
+//  _manager.removeLocalStorageEntry('auth_token');
   runApp(
       ChangeNotifierProvider<DataManager>(
         child: ChangeNotifierProvider<StateManager>(
@@ -79,7 +79,10 @@ class MyHomePage extends StatelessWidget {
     List<Widget> exp = <Widget>[
       IconButton(icon: Icon(Icons.person), onPressed: () {},),
       IconButton(icon: Icon(Icons.notifications), onPressed: () {},),
-      IconButton(icon: Icon(FontAwesomeIcons.signOutAlt), onPressed: () {},),
+      IconButton(icon: Icon(FontAwesomeIcons.signOutAlt), onPressed: () {
+        DataManager.instance.removeLocalStorageEntry('auth_token');
+        Navigator.pushReplacement(context, new MaterialPageRoute(builder: (BuildContext context) => LoginPage()));
+      },),
     ];
     List<Widget> single = <Widget>[
 //      IconButton(icon: Icon(Icons.more_vert), onPressed: () {},),
@@ -108,7 +111,10 @@ class MyHomePage extends StatelessWidget {
             ),
           ),
         ],
-        onSelected: (action) {},
+        onSelected: (action) {
+          DataManager.instance.removeLocalStorageEntry('auth_token');
+          Navigator.pushReplacement(context, new MaterialPageRoute(builder: (BuildContext context) => LoginPage()));
+        },
       )
     ];
     return (state.isMobileScreen(context)) ? single : exp;

@@ -7,6 +7,13 @@ import '../server.dart';
 
 class DataManager with ChangeNotifier {
   Server server = Server();
+  static DataManager _instance;
+
+  static DataManager get instance {
+    if (_instance == null)
+      _instance = DataManager();
+    return _instance;
+  }
 
   void loadResources() async {
     users = await server.getUsers();
@@ -28,6 +35,7 @@ class DataManager with ChangeNotifier {
   }
 
   bool isAuthenticated() {
+    print(window.localStorage['auth_token']);
     return window.localStorage.containsKey('auth_token');
   }
 
