@@ -1,5 +1,8 @@
 import 'package:flutter_web/gestures.dart';
 import 'package:flutter_web/material.dart';
+import 'package:uur_flutter_website/font_awesome/font_awesome_flutter.dart';
+import 'package:uur_flutter_website/src/components/uur_icon.dart';
+import 'package:uur_flutter_website/src/managers/data_manager.dart';
 
 class CheckboxWithLabel extends StatelessWidget {
   /// Called when the value of the checkbox should change.
@@ -71,7 +74,6 @@ class TextFormFieldUUR extends StatelessWidget {
             labelText: labelText,
             border: InputBorder.none,
             focusedBorder: OutlineInputBorder(
-//              borderRadius: BorderRadius.circular(8),
                 borderSide: BorderSide(color: Colors.indigo)
             )
         ),
@@ -163,6 +165,50 @@ class UURDropDownButton<T> extends StatelessWidget {
             value: value,
             items: items,
             onChanged: onChanged,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class TeamCard extends StatelessWidget {
+  final Team team;
+  final VoidCallback onPressed;
+
+  const TeamCard({Key key, this.team, this.onPressed}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 8),
+      child: Card(
+        child: InkWell(
+          onTap: onPressed,
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                Row(
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.only(right: 8.0),
+                      child: UURIcon(FontAwesomeIcons.robot),
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(team.name,style: Theme.of(context).textTheme.headline,),
+                        Text(team.number, style: Theme.of(context).textTheme.subhead,)
+                      ],
+                    )
+                  ],
+                )
+              ],
+            ),
           ),
         ),
       ),

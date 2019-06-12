@@ -1,4 +1,5 @@
 import 'package:uur_flutter_website/provider/provider.dart';
+import 'package:uur_flutter_website/src/pages/competition_page.dart';
 import 'package:uur_flutter_website/src/pages/dashboard_page.dart';
 import 'package:uur_flutter_website/src/pages/schools_page.dart';
 import 'package:uur_flutter_website/src/pages/teams_page.dart';
@@ -33,7 +34,7 @@ class PageManager extends StatelessWidget {
         _page = TeamsPage();
         break;
       case Page.COMPETITIONS:
-        _page = Text("Competitions");
+        _page = CompetitionsPage();
         break;
       case Page.TUTORIALS:
         _page = Text("Tutorials");

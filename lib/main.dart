@@ -103,7 +103,6 @@ class MyHomePage extends StatelessWidget {
       },),
     ];
     List<Widget> single = <Widget>[
-//      IconButton(icon: Icon(Icons.more_vert), onPressed: () {},),
       PopupMenuButton<Actions>(
         icon: Icon(Icons.more_vert),
         itemBuilder: (BuildContext context) => <PopupMenuEntry<Actions>>[
@@ -124,7 +123,7 @@ class MyHomePage extends StatelessWidget {
               title: Text("Notifications"),
             ),
           ),
-          const PopupMenuItem(
+          PopupMenuItem(
             value: Actions.SIGN_OUT,
             child: ListTile(
               leading: Icon(FontAwesomeIcons.signInAlt),

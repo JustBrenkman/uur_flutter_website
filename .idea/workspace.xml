@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fbca859b-1d29-44cc-9141-f9a458520a47" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/lib/src/components/competitions_table.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/components/uur_icon.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/pages/competition_page.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/components/uur_ui_components.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/components/uur_ui_components.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/managers/data_manager.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/managers/data_manager.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/managers/page_manager.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/managers/page_manager.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/pages/teams_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/teams_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/server.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/server.dart" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,13 +25,39 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/main.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="45" column="44" lean-forward="true" selection-start-line="45" selection-start-column="44" selection-end-line="45" selection-end-column="44" />
+            <state relative-caret-position="576">
+              <caret line="102" column="10" lean-forward="true" selection-start-line="102" selection-start-column="10" selection-end-line="102" selection-end-column="10" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/src/managers/data_manager.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="258" column="20" lean-forward="true" selection-start-line="258" selection-start-column="20" selection-end-line="258" selection-end-column="20" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+                <element signature="n#!!block;n#UsersDataTableSource#0" />
+                <element signature="n#!!block;n#SchoolsDataTableSource#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/src/pages/teams_page.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2256">
+              <caret line="94" column="3" lean-forward="true" selection-start-line="94" selection-start-column="3" selection-end-line="94" selection-end-column="3" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -31,25 +66,38 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/src/components/uur_ui_components.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1440">
-              <caret line="158" column="60" selection-start-line="158" selection-start-column="60" selection-end-line="158" selection-end-column="60" />
+            <state relative-caret-position="443">
+              <caret line="173" lean-forward="true" selection-start-line="173" selection-end-line="173" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
                 <element signature="n#!!block;n#CheckboxWithLabel#0" />
                 <element signature="n#!!block;n#MediumButton#0" />
                 <element signature="n#!!block;n#HyperLink#0" />
+                <element signature="n#!!block;n#UURDropDownButton#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/src/managers/data_manager.dart">
+        <entry file="file://$PROJECT_DIR$/lib/src/server.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
-              <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+            <state relative-caret-position="467">
+              <caret line="53" column="53" selection-start-line="53" selection-start-column="45" selection-end-line="53" selection-end-column="53" />
               <folding>
-                <element signature="e#0#19#0" expanded="true" />
+                <element signature="e#0#22#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Roaming/Pub/Cache/git/flutter_web-69acfd97c5a7bf0605e9a01df7749716ceb1707f/packages/flutter_web/lib/src/widgets/icon.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="864">
+              <caret line="38" column="13" lean-forward="true" selection-end-line="186" />
+              <folding>
+                <element signature="e#166#210#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -103,19 +151,22 @@
         <option value="$PROJECT_DIR$/lib/src/pages/team_page.dart" />
         <option value="$PROJECT_DIR$/lib/src/components/TeamsTable.dart" />
         <option value="$PROJECT_DIR$/lib/src/components/teams_table.dart" />
-        <option value="$PROJECT_DIR$/lib/src/pages/teams_page.dart" />
-        <option value="$PROJECT_DIR$/lib/src/managers/page_manager.dart" />
         <option value="$PROJECT_DIR$/lib/src/pages/login_page.dart" />
         <option value="$PROJECT_DIR$/lib/src/managers/server_proxy.dart" />
         <option value="$PROJECT_DIR$/build/index.html" />
         <option value="$PROJECT_DIR$/pubspec.yaml" />
         <option value="$PROJECT_DIR$/web/index.html" />
-        <option value="$PROJECT_DIR$/lib/src/server.dart" />
-        <option value="$PROJECT_DIR$/lib/src/components/uur_ui_components.dart" />
         <option value="$PROJECT_DIR$/lib/src/pages/sign_in_up_page.dart" />
         <option value="$PROJECT_DIR$/lib/src/managers/state_manager.dart" />
-        <option value="$PROJECT_DIR$/lib/src/managers/data_manager.dart" />
         <option value="$PROJECT_DIR$/lib/main.dart" />
+        <option value="$PROJECT_DIR$/lib/src/components/competitions_table.dart" />
+        <option value="$PROJECT_DIR$/lib/src/pages/competition_page.dart" />
+        <option value="$PROJECT_DIR$/lib/src/managers/page_manager.dart" />
+        <option value="$PROJECT_DIR$/lib/src/components/font_awesome_icon.dart" />
+        <option value="$PROJECT_DIR$/lib/src/server.dart" />
+        <option value="$PROJECT_DIR$/lib/src/components/uur_ui_components.dart" />
+        <option value="$PROJECT_DIR$/lib/src/pages/teams_page.dart" />
+        <option value="$PROJECT_DIR$/lib/src/managers/data_manager.dart" />
       </list>
     </option>
   </component>
@@ -156,13 +207,6 @@
               <item name="lib" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="uur_flutter_website" type="b2602c69:ProjectViewProjectNode" />
-              <item name="uur_flutter_website" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="managers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="uur_flutter_website" type="b2602c69:ProjectViewProjectNode" />
@@ -242,7 +286,7 @@
       <workItem from="1559958408835" duration="9832000" />
       <workItem from="1560091525634" duration="8430000" />
       <workItem from="1560184181277" duration="96000" />
-      <workItem from="1560184382853" duration="11800000" />
+      <workItem from="1560184382853" duration="22357000" />
     </task>
     <task id="LOCAL-00001" summary="Added login capabilities.">
       <created>1560189415535</created>
@@ -258,17 +302,24 @@
       <option name="project" value="LOCAL" />
       <updated>1560210202792</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Can now switch between dark and light themes on the fly">
+      <created>1560210431716</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1560210431716</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67495000" />
+    <option name="totallyTimeSpent" value="78052000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26599148" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26599148" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -284,7 +335,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.32977587" />
       <window_info anchor="bottom" id="Dart Analysis" order="8" weight="0.32977587" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32977587" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32977587" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Statistic" order="12" />
@@ -348,7 +399,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added login capabilities." />
     <MESSAGE value="Added more custom components and modified current ui to support dark theme. Added component was a styled drop down menu button for the form field." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added more custom components and modified current ui to support dark theme. Added component was a styled drop down menu button for the form field." />
+    <MESSAGE value="Can now switch between dark and light themes on the fly" />
+    <option name="LAST_COMMIT_MESSAGE" value="Can now switch between dark and light themes on the fly" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -362,71 +414,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/AppData/Roaming/Pub/Cache/git/flutter_web-69acfd97c5a7bf0605e9a01df7749716ceb1707f/packages/flutter_web/lib/src/material/icon_button.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="143" column="24" lean-forward="true" selection-start-line="143" selection-start-column="24" selection-end-line="143" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Roaming/Pub/Cache/git/flutter_web-69acfd97c5a7bf0605e9a01df7749716ceb1707f/packages/flutter_web/lib/src/material/popup_menu.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="539">
-          <caret line="834" column="13" selection-start-line="834" selection-start-column="9" selection-end-line="834" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/assets/FontManifest.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="25" column="40" lean-forward="true" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/assets/AssetManifest.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="1" selection-start-column="1" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Roaming/Pub/Cache/git/flutter_web-69acfd97c5a7bf0605e9a01df7749716ceb1707f/packages/flutter_web/lib/src/widgets/icon.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/components/schools_table.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="11" column="41" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/pages/schools_page.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="12" column="30" lean-forward="true" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/components/navigation_drawer.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1872">
-          <caret line="78" column="17" lean-forward="true" selection-start-line="78" selection-start-column="17" selection-end-line="78" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Roaming/Pub/Cache/git/flutter_web-69acfd97c5a7bf0605e9a01df7749716ceb1707f/packages/flutter_web/lib/src/widgets/basic.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
@@ -458,47 +445,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/components/teams_table.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="6" column="63" selection-start-line="6" selection-start-column="63" selection-end-line="6" selection-end-column="63" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/pages/teams_page.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="17" column="25" lean-forward="true" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/managers/page_manager.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="768">
-          <caret line="32" column="28" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#60#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Roaming/Pub/Cache/git/flutter_web-69acfd97c5a7bf0605e9a01df7749716ceb1707f/packages/flutter_web/lib/src/material/theme_data.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2051">
           <caret line="116" column="38" lean-forward="true" selection-start-line="116" selection-start-column="38" selection-end-line="116" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Roaming/Pub/Cache/git/flutter_web-69acfd97c5a7bf0605e9a01df7749716ceb1707f/packages/flutter_web/lib/src/material/card.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
-          <caret line="112" column="14" selection-start-line="112" selection-start-column="9" selection-end-line="112" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -637,16 +587,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/server.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="7" column="40" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Roaming/Pub/Cache/git/flutter_web-69acfd97c5a7bf0605e9a01df7749716ceb1707f/packages/flutter_web/lib/src/painting/text_style.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
@@ -723,35 +663,162 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/managers/data_manager.dart">
+    <entry file="file://$PROJECT_DIR$/lib/src/components/schools_table.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+        <state>
+          <caret selection-end-line="16" selection-end-column="1" />
           <folding>
-            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#0#43#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/components/uur_ui_components.dart">
+    <entry file="file://$PROJECT_DIR$/lib/src/pages/schools_page.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1440">
-          <caret line="158" column="60" selection-start-line="158" selection-start-column="60" selection-end-line="158" selection-end-column="60" />
+        <state>
+          <caret selection-end-line="34" selection-end-column="1" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
-            <element signature="n#!!block;n#CheckboxWithLabel#0" />
-            <element signature="n#!!block;n#MediumButton#0" />
-            <element signature="n#!!block;n#HyperLink#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/managers/page_manager.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="36" column="35" lean-forward="true" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/pages/competition_page.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="21" column="59" lean-forward="true" selection-start-line="21" selection-start-column="59" selection-end-line="21" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/components/competitions_table.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="12" column="38" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Roaming/Pub/Cache/git/flutter_web-69acfd97c5a7bf0605e9a01df7749716ceb1707f/packages/flutter_web/lib/src/material/data_table.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-13717">
+          <caret line="97" column="44" lean-forward="true" selection-start-line="97" selection-start-column="44" selection-end-line="97" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/components/navigation_drawer.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1237">
+          <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/components/teams_table.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="6" column="63" selection-start-line="6" selection-start-column="63" selection-end-line="6" selection-end-column="63" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Roaming/Pub/Cache/git/flutter_web-69acfd97c5a7bf0605e9a01df7749716ceb1707f/packages/flutter_web/lib/src/material/card.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="491">
+          <caret line="112" column="14" selection-start-line="112" selection-start-column="9" selection-end-line="112" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Roaming/Pub/Cache/git/flutter_web-69acfd97c5a7bf0605e9a01df7749716ceb1707f/packages/flutter_web/lib/src/widgets/icon.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="864">
+          <caret line="38" column="13" lean-forward="true" selection-end-line="186" />
+          <folding>
+            <element signature="e#166#210#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/main.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="45" column="44" lean-forward="true" selection-start-line="45" selection-start-column="44" selection-end-line="45" selection-end-column="44" />
+        <state relative-caret-position="576">
+          <caret line="102" column="10" lean-forward="true" selection-start-line="102" selection-start-column="10" selection-end-line="102" selection-end-column="10" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/components/uur_icon.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
+          <folding>
+            <element signature="e#166#210#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/server.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="53" column="53" selection-start-line="53" selection-start-column="45" selection-end-line="53" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/components/uur_ui_components.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="173" lean-forward="true" selection-start-line="173" selection-end-line="173" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+            <element signature="n#!!block;n#CheckboxWithLabel#0" />
+            <element signature="n#!!block;n#MediumButton#0" />
+            <element signature="n#!!block;n#HyperLink#0" />
+            <element signature="n#!!block;n#UURDropDownButton#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/pages/teams_page.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2256">
+          <caret line="94" column="3" lean-forward="true" selection-start-line="94" selection-start-column="3" selection-end-line="94" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/managers/data_manager.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="258" column="20" lean-forward="true" selection-start-line="258" selection-start-column="20" selection-end-line="258" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+            <element signature="n#!!block;n#UsersDataTableSource#0" />
+            <element signature="n#!!block;n#SchoolsDataTableSource#0" />
           </folding>
         </state>
       </provider>

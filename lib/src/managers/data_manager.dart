@@ -10,8 +10,9 @@ class DataManager with ChangeNotifier {
   static DataManager _instance;
 
   static DataManager get instance {
-    if (_instance == null)
+    if (_instance == null) {
       _instance = DataManager();
+    }
     return _instance;
   }
 
@@ -19,6 +20,12 @@ class DataManager with ChangeNotifier {
     users = await server.getUsers();
     notifyListeners();
     schools = await server.getSchools();
+    notifyListeners();
+    competitions = await server.getCompetitions();
+    notifyListeners();
+    teams = await server.getTeams();
+    notifyListeners();
+    schoolsTeams = await server.getSchoolsTeams();
     notifyListeners();
   }
 
@@ -58,9 +65,23 @@ class DataManager with ChangeNotifier {
     Team("Jun 1 2019", "Cougars", "BYU-01", "BYU", "Master"),
   ];
 
+  List<Team> schoolsTeams = [
+    Team("Jun 1 2019", "Cougars", "BYU-01", "BYU", "Master"),
+    Team("Jun 1 2019", "Cougars", "BYU-01", "BYU", "Master"),
+    Team("Jun 1 2019", "Cougars", "BYU-01", "BYU", "Master"),
+  ];
+
+  List<Competition> competitions = [
+    Competition('Jun 1 2019', 2, "March madness", "july 1 2019", "july 2 2019", "closed", "closed"),
+    Competition('Jun 1 2019', 2, "March madness", "july 1 2019", "july 2 2019", "closed", "closed"),
+    Competition('Jun 1 2019', 2, "March madness", "july 1 2019", "july 2 2019", "closed", "closed"),
+    Competition('Jun 1 2019', 2, "March madness", "july 1 2019", "july 2 2019", "closed", "closed"),
+  ];
+
   UsersDataTableSource _usersDataTableSource;
   SchoolsDataTableSource _schoolsDataTableSource;
   TeamsDataTableSource _teamsDataTableSource;
+  CompetitionDataTableSource _competitionDataTableSource;
 
   UsersDataTableSource get userDataTableSource {
     if (_usersDataTableSource == null) {
@@ -81,6 +102,13 @@ class DataManager with ChangeNotifier {
       _teamsDataTableSource = TeamsDataTableSource(this);
     }
     return _teamsDataTableSource;
+  }
+
+  CompetitionDataTableSource get competitionDataTableSource {
+    if (_competitionDataTableSource == null) {
+      _competitionDataTableSource = CompetitionDataTableSource(this);
+    }
+    return _competitionDataTableSource;
   }
 }
 
@@ -213,6 +241,7 @@ class TeamsDataTableSource extends DataTableSource {
       DataColumn(label: Text("Number")),
       DataColumn(label: Text("School")),
       DataColumn(label: Text("Status")),
+      DataColumn(label: Text("View"))
     ];
   }
 
@@ -226,6 +255,9 @@ class TeamsDataTableSource extends DataTableSource {
       DataCell(Text(team.number ?? "")),
       DataCell(Text(team.school ?? "")),
       DataCell(Text(team.status ?? "")),
+      DataCell(Icon(Icons.remove_red_eye), onTap: () {
+        print(team);
+      })
     ];
     DataRow row = DataRow(cells: cells);
     return row;
@@ -244,6 +276,61 @@ class TeamsDataTableSource extends DataTableSource {
   int get selectedRowCount => 0;
 }
 
+
+
+
+
+
+class CompetitionDataTableSource extends DataTableSource {
+  final DataManager _manager;
+
+  CompetitionDataTableSource(this._manager);
+
+  List<DataColumn> get columns {
+    return <DataColumn>[
+      DataColumn(label: Text("Time Stamp")),
+      DataColumn(label: Text("Id")),
+      DataColumn(label: Text("Name")),
+      DataColumn(label: Text("Start")),
+      DataColumn(label: Text("End")),
+      DataColumn(label: Text("Registration Status")),
+      DataColumn(label: Text("Status")),
+      DataColumn(label: Text("View"))
+    ];
+  }
+
+  @override
+  DataRow getRow(int index) {
+    // TODO: implement getRow
+    Competition comp = _manager.competitions.elementAt(index);
+    List<DataCell> cells = [
+      DataCell(Text(comp.timestamp ?? "")),
+      DataCell(Text(comp.id.toString() ?? "")),
+      DataCell(Text(comp.name ?? "")),
+      DataCell(Text(comp.start ?? "")),
+      DataCell(Text(comp.end ?? "")),
+      DataCell(Text(comp.registration_status ?? "")),
+      DataCell(Text(comp.status ?? "")),
+      DataCell(Icon(Icons.remove_red_eye), onTap: () {
+        print(comp);
+      })
+    ];
+    DataRow row = DataRow(cells: cells);
+    return row;
+  }
+
+  @override
+  // TODO: implement isRowCountApproximate
+  bool get isRowCountApproximate => false;
+
+  @override
+  // TODO: implement rowCount
+  int get rowCount => _manager.competitions.length;
+
+  @override
+  // TODO: implement selectedRowCount
+  int get selectedRowCount => 0;
+}
 
 
 
@@ -332,13 +419,42 @@ class Team {
 
   Team.fromJson(Map<String, dynamic> json) :
       timestamp = json['timestamp'],
-      name = json['name'],
-      number = json['number'],
-      school = json['school'],
+      name = json['team_name'],
+      number = json['team_number'],
+      school = json['school_abr'],
       status = json['status'];
 
   @override
   String toString() {
     return 'Team{timestamp: $timestamp, name: $name, number: $number, school: $school, status: $status}';
+  }
+}
+
+
+
+
+class Competition {
+  final String timestamp;
+  final int id;
+  final String name;
+  final String start;
+  final String end;
+  final String registration_status;
+  final String status;
+
+  Competition(this.timestamp, this.id, this.name, this.start, this.end, this.registration_status, this.status);
+
+  Competition.fromJson(Map<String, dynamic> json) :
+        timestamp = json['timestamp'],
+        id = json['id'],
+        name = json['name'],
+        start = json['start'],
+        end = json['end'],
+        registration_status = json['registration_status'],
+        status = json['status'];
+
+  @override
+  String toString() {
+    return 'Competition{timstamp: $timestamp, id: $id, name: $name, start: $start, end: $end, registration_status: $registration_status, status: $status}';
   }
 }
