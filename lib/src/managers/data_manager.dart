@@ -17,14 +17,34 @@ class DataManager with ChangeNotifier {
   }
 
   void loadResources() async {
+    loadUsersData();
+    loadSchoolsData();
+    loadCompetitionsData();
+    loadTeamsData();
+    loadSchoolsTeamData();
+  }
+
+  void loadUsersData() async {
     users = await server.getUsers();
     notifyListeners();
+  }
+
+  void loadSchoolsData() async {
     schools = await server.getSchools();
     notifyListeners();
+  }
+
+  void loadCompetitionsData() async {
     competitions = await server.getCompetitions();
     notifyListeners();
+  }
+
+  void loadTeamsData() async {
     teams = await server.getTeams();
     notifyListeners();
+  }
+
+  void loadSchoolsTeamData() async {
     schoolsTeams = await server.getSchoolsTeams();
     notifyListeners();
   }

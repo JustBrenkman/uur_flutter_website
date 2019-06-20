@@ -215,3 +215,122 @@ class TeamCard extends StatelessWidget {
     );
   }
 }
+
+class DisplayBox extends StatelessWidget {
+  final Widget child;
+  final double borderRadius;
+
+  DisplayBox({this.child, this.borderRadius = 8.0});
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: SizedBox(
+        height: 45,
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(borderRadius)),
+            color: Colors.indigo.withAlpha(20)
+          ),
+          child: Center(child: child),
+        ),
+      ),
+    );
+  }
+}
+
+enum ToggleButtonAlign {START, MIDDLE, END}
+
+class ToggleButton extends StatelessWidget {
+  /// Called when the value of the checkbox should change.
+  ///
+  /// The checkbox passes the new value to the callback but does not actually
+  /// change state until the parent widget rebuilds the checkbox tile with the
+  /// new value.
+  ///
+  /// If null, the checkbox will be displayed as disabled.
+  ///
+  /// The callback provided to [onChanged] should update the state of the parent
+  /// [StatefulWidget] using the [State.setState] method, so that the parent
+  final ValueChanged<bool> onChanged;
+  /// The primary content of the list tile.
+  ///
+  /// Typically a [Text] widget.
+  final Widget title;
+  /// Whether this checkbox is checked.
+  ///
+  /// This property must not be null.
+  final bool value;
+
+  final Widget child;
+  final ToggleButtonAlign buttonAlignment;
+  final double radius;
+
+  const ToggleButton({Key key, this.onChanged, this.title, this.value, this.child, this.buttonAlignment, this.radius = 4}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return GestureDetector(
+      onTap: onChanged != null ? () {onChanged(!value);} : null,
+      child: InkWell(
+        onTap: () => onChanged(!value),
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(buttonAlignment == ToggleButtonAlign.START ? buttonAlignment == ToggleButtonAlign.MIDDLE ? 0 : radius : 0),
+              topRight: Radius.circular(buttonAlignment == ToggleButtonAlign.START ? buttonAlignment == ToggleButtonAlign.MIDDLE ? 0 : 0 : radius),
+              bottomLeft: Radius.circular(buttonAlignment == ToggleButtonAlign.START ? buttonAlignment == ToggleButtonAlign.MIDDLE ? 0 : radius : 0),
+              bottomRight: Radius.circular(buttonAlignment == ToggleButtonAlign.START ? buttonAlignment == ToggleButtonAlign.MIDDLE ? 0 : 0 : radius)
+            ),
+            border: Border(
+              top: BorderSide(color: Theme.of(context).primaryColor, width: 1),
+              bottom: BorderSide(color: Theme.of(context).primaryColor, width: 1),
+              left: BorderSide(color: Theme.of(context).primaryColor, width: 1),
+              right: BorderSide(color: Theme.of(context).primaryColor, width: 1),
+            ),
+            color: Colors.indigo.withAlpha(20)
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Center(
+                child: child
+            ),
+          ),
+        ),
+      ),
+//      Row(
+//        mainAxisAlignment: alignment,
+//        children: <Widget>[
+//          Padding(
+//            padding: const EdgeInsets.only(right: 4.0),
+//            child: Checkbox(
+//              value: value,
+//              onChanged: onChanged,
+//            ),
+//          ),
+//          title
+//        ],
+//      ),
+    );
+  }
+}
+
+class ButtonGroup extends StatelessWidget {
+  final List<Widget> children;
+
+  ButtonGroup({this.children});
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Row(
+        children: children,
+      ),
+    );
+  }
+}

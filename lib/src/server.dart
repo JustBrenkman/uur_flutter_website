@@ -3,8 +3,8 @@ import 'package:uur_flutter_website/src/managers/data_manager.dart';
 import 'package:http/http.dart' as http;
 
 class Server {
-  String _serverURL = "http://localhost:5000/";
-//  String _serverURL = "https://uur.byu.edu/";
+//  String _serverURL = "http://localhost:5000/";
+  String _serverURL = "https://uur.byu.edu/";
   String _getUsersURL = "api/users/list";
   String _getTeamsURL = "api/team/get_team_list";
   String _getSchoolsTeamsURL = "api/team/get_team_list_from_school";

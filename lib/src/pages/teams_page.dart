@@ -35,7 +35,48 @@ class TeamsPage extends StatelessWidget {
               child: Card(
                 color: Theme.of(context).primaryColor,
                 child: InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      showDialog<bool>(
+                          context: context,
+                          builder: (context) {
+                            return SimpleDialog(
+                              title: Text('New Team'),
+                              children: <Widget>[
+                                DisplayBox(
+                                  child: Text('Team Number'),
+                                ),
+                                TextFormFieldUUR(
+                                  labelText: 'Name',
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: <Widget>[
+                                    FlatButton(
+                                      child: Text('Cancel'),
+                                      onPressed: () => Navigator.pop(context, false),
+                                    ),
+                                    FlatButton(
+                                      child: Text('Finish', style: TextStyle(color: Theme.of(context).primaryColor),),
+                                      onPressed: () => Navigator.pop(context, true),
+                                    )
+                                  ],
+                                ),
+                                ButtonGroup(
+                                  children: <Widget>[
+                                    ToggleButton(
+                                      child: Text('Stock'),
+                                      buttonAlignment: ToggleButtonAlign.START,
+                                    ),
+                                    ToggleButton(
+                                      child: Text('Open'),
+                                      buttonAlignment: ToggleButtonAlign.END,
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            );
+                          });
+                    },
                     child: Container(
                         child: Padding(
                           padding: const EdgeInsets.symmetric(vertical: 8),
