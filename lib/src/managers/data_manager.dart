@@ -1,4 +1,5 @@
 import 'dart:html';
+import 'dart:html' as prefix0;
 
 import 'package:firebase/firestore.dart';
 import 'package:flutter_web/material.dart';
@@ -20,11 +21,11 @@ class DataManager with ChangeNotifier {
   }
 
   void loadResources() async {
-    await loadUsersData();
-    await loadSchoolsData();
-    await loadCompetitionsData();
-    await loadTeamsData();
-    await loadSchoolsTeamData();
+//    await loadUsersData();
+//    await loadSchoolsData();
+//    await loadCompetitionsData();
+//    await loadTeamsData();
+//    await loadSchoolsTeamData();
   }
 
   void loadUsersData() async {
@@ -137,6 +138,10 @@ class DataManager with ChangeNotifier {
   Future<DocumentReference> registerSchool(School school) async {
     print(school.toString());
     return firestore().collection('schools').add(school.toMap());
+  }
+
+  Future<DocumentReference> registerTeam(Team team) async {
+    return firestore().collection('teams').add(team.toMap());
   }
 }
 
@@ -463,6 +468,8 @@ class Team {
 
   Team(this.timestamp, this.name, this.number, this.school, this.status);
 
+  Team.selective({this.timestamp, this.name, this.number, this.school, this.status});
+
   Team.fromJson(Map<String, dynamic> json) :
       timestamp = json['timestamp'],
       name = json['team_name'],
@@ -473,6 +480,12 @@ class Team {
   @override
   String toString() {
     return 'Team{timestamp: $timestamp, name: $name, number: $number, school: $school, status: $status}';
+  }
+
+  Map<String, dynamic> toMap() {
+    return {
+      'name': name
+    };
   }
 }
 

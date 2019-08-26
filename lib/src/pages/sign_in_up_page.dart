@@ -5,6 +5,8 @@ import 'package:uur_flutter_website/src/components/uur_ui_components.dart';
 import 'package:uur_flutter_website/src/managers/data_manager.dart';
 import 'package:uur_flutter_website/src/managers/state_manager.dart';
 
+import 'package:firebase/firebase.dart' as fb;
+
 import '../../main.dart';
 import '../server.dart';
 
@@ -127,31 +129,38 @@ class _LoginPageState extends State<LoginPage> {
     setState(() {
       _isLogginIn = true;
     });
-    try {
-      var response = await Server.instance
-          .login(_emailController.text, _passwordController.text);
-      if (response['result'] == 'Success') {
-        print(response['auth_token']);
-        DataManager.instance
-            .setLocalStorageEntry('auth_token', response['auth_token']);
-        await Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(
-                builder: (BuildContext context) =>
-                    MyHomePage(title: "Utah Underwater Robotics")));
-      } else {
-        Scaffold.of(context).showSnackBar(SnackBar(
-          content: Text(response['message']),
-        ));
-      }
-    } catch (e) {
-      Scaffold.of(context).showSnackBar(SnackBar(
-        content: Text(e.toString()),
-      ));
-    } finally {
-      setState(() {
-        _isLogginIn = false;
-      });
+//    try {
+//      var response = await Server.instance
+//          .login(_emailController.text, _passwordController.text);
+//      if (response['result'] == 'Success') {
+//        print(response['auth_token']);
+//        DataManager.instance
+//            .setLocalStorageEntry('auth_token', response['auth_token']);
+//        await Navigator.pushReplacement(
+//            context,
+//            MaterialPageRoute(
+////                builder: (BuildContext context) =>
+////                    MyHomePage(title: "Utah Underwater Robotics")));
+//      } else {
+//        Scaffold.of(context).showSnackBar(SnackBar(
+//          content: Text(response['message']),
+//        ));
+//      }
+//    } catch (e) {
+//      Scaffold.of(context).showSnackBar(SnackBar(
+//        content: Text(e.toString()),
+//      ));
+//    } finally {
+//      setState(() {
+//        _isLogginIn = false;
+//      });
+//    }
+    fb.Auth auth = fb.auth();
+    await auth.signInWithEmailAndPassword(_emailController.text, _passwordController.text);
+    if (auth.currentUser != null) {
+      await Navigator.push(context, MaterialPageRoute(
+          builder: (BuildContext context) =>
+              MyHomePage(title: "Utah Underwater Robotics")));
     }
   }
 

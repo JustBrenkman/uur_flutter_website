@@ -1,95 +1,90 @@
+import 'package:firebase/firebase.dart';
+import 'package:firebase/firestore.dart';
 import 'package:flutter_web/material.dart';
 import 'package:flutter_web/widgets.dart';
 import 'package:uur_flutter_website/provider/provider.dart';
-import 'package:uur_flutter_website/src/components/teams_table.dart';
 import 'package:uur_flutter_website/src/components/uur_ui_components.dart';
+import 'package:uur_flutter_website/src/dialogs/add_school.dart';
+import 'package:uur_flutter_website/src/dialogs/add_team.dart';
 import 'package:uur_flutter_website/src/managers/data_manager.dart';
 import 'package:uur_flutter_website/src/managers/state_manager.dart';
 
-class TeamsPage extends StatelessWidget {
+class TeamsPage extends StatefulWidget {
+  @override
+  _TeamsPageState createState() => _TeamsPageState();
+}
+
+class _TeamsPageState extends State<TeamsPage> {
+  Map<String, String> schoolNames = {};
+
+  void getSchoolInfo(String id, DocumentReference ref) async {
+    var snap = await ref.get();
+    setState(() {
+      schoolNames[id] = snap.get('name');
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    return Consumer<DataManager>(
-      builder: (BuildContext context, DataManager _manager, Widget child) {
+    return StreamBuilder(
+      stream: firestore().collection('teams').onSnapshot,
+      builder: (BuildContext context, AsyncSnapshot snapshot) {
+        if (!snapshot.hasData) return Center(child: Text('Loading...', style: Theme.of(context).textTheme.display2,));
+        QuerySnapshot snap = snapshot.data;
         return Column(
+          mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Row(
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                Expanded(
-                  child: Center(
-                    child: Container(
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: TeamsTable(_manager),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4),
-              child: Card(
-                color: Theme.of(context).primaryColor,
-                child: InkWell(
-                    onTap: () {
-                      showDialog<bool>(
-                          context: context,
-                          builder: (context) {
-                            return SimpleDialog(
-                              title: Text('New Team'),
-                              children: <Widget>[
-                                DisplayBox(
-                                  child: Text('Team Number'),
-                                ),
-                                TextFormFieldUUR(
-                                  labelText: 'Name',
-                                ),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: <Widget>[
-                                    FlatButton(
-                                      child: Text('Cancel'),
-                                      onPressed: () => Navigator.pop(context, false),
-                                    ),
-                                    FlatButton(
-                                      child: Text('Finish', style: TextStyle(color: Theme.of(context).primaryColor),),
-                                      onPressed: () => Navigator.pop(context, true),
-                                    )
-                                  ],
-                                ),
-                                ButtonGroup(
-                                  children: <Widget>[
-                                    ToggleButton(
-                                      child: Text('Stock'),
-                                      buttonAlignment: ToggleButtonAlign.START,
-                                    ),
-                                    ToggleButton(
-                                      child: Text('Open'),
-                                      buttonAlignment: ToggleButtonAlign.END,
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            );
-                          });
-                    },
-                    child: Container(
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 8),
-                          child: Icon(Icons.add, color: Colors.grey[100],),
-                        )
+            Card(
+              color: Theme.of(context).primaryColor,
+              child: InkWell(
+                onTap: () => showDialog(context: context, builder: (context) => AddTeamDialog()),
+                child: Container(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 8),
+                      child: Icon(Icons.add, color: Colors.grey[100],),
                     )
                 ),
               ),
             ),
-            ..._getTeamsList(context, _manager)
+            ...snap.docs.map((doc) {
+              getSchoolInfo(doc.id, doc.data()['school']);
+              return Card(
+                child: InkWell(
+                  onTap: () {},
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: <Widget>[
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Text(doc.data()['name'], style: Theme.of(context).textTheme.title,),
+                            Text('${schoolNames[doc.id] ?? ''}')
+//                            Text(doc.data()['active'] ?? false ? "ACTIVE" : "INACTIVE", style: TextStyle(color: doc.data()['active'] ?? false ? Colors.green : Colors.red))
+                          ],
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 8.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+//                              Text("${doc.data()['address']}, ${doc.data()['state']}, ${doc.data()['zipcode']} \t\t ${doc.data()['phone']}"),
+//                              Text("${doc.data()['district']}"),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              );
+            }).toList()
           ],
         );
-    },
+      },
     );
   }
 

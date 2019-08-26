@@ -9,6 +9,9 @@ import 'package:uur_flutter_website/src/managers/state_manager.dart';
 import 'package:uur_flutter_website/src/managers/data_manager.dart';
 import 'package:uur_flutter_website/src/pages/sign_in_up_page.dart';
 
+import 'package:firebase/firestore.dart';
+import 'package:firebase/firebase.dart' as fb;
+
 void main() {
   DataManager _manager = DataManager.instance;
   _manager.loadResources();
@@ -30,6 +33,7 @@ enum Actions {SIGN_OUT, PROFILE, NOTIFICATIONS}
 class MyApp extends StatelessWidget {
   DataManager _manager;
   MyApp(this._manager);
+  fb.Auth auth = fb.auth();
 
   // This widget is the root of your application.
   @override
@@ -46,7 +50,7 @@ class MyApp extends StatelessWidget {
             primarySwatch: Colors.indigo,
             primaryColorDark: Colors.indigo,
           ),
-          home: (_manager.isAuthenticated()) ? MyHomePage(title: 'Utah Underwater Robotics') : LoginPage(),
+          home: (auth.currentUser != null) ? MyHomePage(title: 'Utah Underwater Robotics') : LoginPage(),
         );
     },
     );
