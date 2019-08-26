@@ -4,9 +4,7 @@ import 'package:flutter_web/material.dart';
 import 'package:flutter_web/widgets.dart';
 import 'package:firebase/firestore.dart' as fs;
 import 'package:firebase/firebase.dart';
-import 'package:uur_flutter_website/provider/provider.dart';
-import 'package:uur_flutter_website/src/components/schools_table.dart';
-import 'package:uur_flutter_website/src/managers/data_manager.dart';
+import 'package:uur_flutter_website/src/dialogs/add_school.dart';
 
 class SchoolsPage extends StatelessWidget {
   fs.Firestore store = firestore();
@@ -26,7 +24,7 @@ class SchoolsPage extends StatelessWidget {
             Card(
               color: Theme.of(context).primaryColor,
               child: InkWell(
-                onTap: () {},
+                onTap: () => showDialog(context: context, builder: (context) => AddSchoolDialog()),
                 child: Container(
                     child: Padding(
                       padding: const EdgeInsets.symmetric(vertical: 8),

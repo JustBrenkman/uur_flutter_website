@@ -107,7 +107,7 @@ class _LoginPageState extends State<LoginPage> {
             ),
             MediumButton(
               onPressed: () => Navigator.push(context,
-                  new MaterialPageRoute(builder: (context) => RegisterPage())),
+                  MaterialPageRoute(builder: (context) => RegisterPage())),
               child: Text(
                 "Register",
               ),
@@ -136,7 +136,7 @@ class _LoginPageState extends State<LoginPage> {
             .setLocalStorageEntry('auth_token', response['auth_token']);
         await Navigator.pushReplacement(
             context,
-            new MaterialPageRoute(
+            MaterialPageRoute(
                 builder: (BuildContext context) =>
                     MyHomePage(title: "Utah Underwater Robotics")));
       } else {
@@ -158,7 +158,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget _loggInChild() {
     return _isLogginIn
         ? CircularProgressIndicator(
-            valueColor: new AlwaysStoppedAnimation<Color>(Colors.white),
+            valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
           )
         : Text(
             "Log in",
@@ -181,8 +181,8 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   void initState() {
     super.initState();
-    _emailFocusNode = new FocusNode();
-    _passwordFocusnode = new FocusNode();
+    _emailFocusNode = FocusNode();
+    _passwordFocusnode = FocusNode();
   }
 
   @override

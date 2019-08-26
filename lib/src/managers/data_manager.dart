@@ -1,9 +1,9 @@
 import 'dart:html';
 
+import 'package:firebase/firestore.dart';
 import 'package:flutter_web/material.dart';
 import 'package:flutter_web/widgets.dart';
 
-import 'package:jaguar_jwt/jaguar_jwt.dart';
 import 'package:firebase/firebase.dart';
 
 import '../server.dart';
@@ -132,6 +132,11 @@ class DataManager with ChangeNotifier {
       _competitionDataTableSource = CompetitionDataTableSource(this);
     }
     return _competitionDataTableSource;
+  }
+
+  Future<DocumentReference> registerSchool(School school) async {
+    print(school.toString());
+    return firestore().collection('schools').add(school.toMap());
   }
 }
 
@@ -405,8 +410,11 @@ class School {
   final String zip_code;
   final String phone;
   final String district;
+  final bool active;
 
-  School(this.timestamp, this.id, this.name, this.abr, this.address, this.city, this.state, this.zip_code, this.phone, this.district);
+  School(this.timestamp, this.id, this.name, this.abr, this.address, this.city, this.state, this.zip_code, this.phone, this.district, {this.active});
+
+  School.selective({this.timestamp, this.id, this.name, this.abr, this.address, this.city, this.state, this.zip_code, this.phone, this.district, this.active});
 
   School.fromJson(Map<String, dynamic> json) :
         timestamp = json['timestamp'],
@@ -418,11 +426,26 @@ class School {
         state = json['state'],
         zip_code = json['zipcode'].toString(),
         phone = json['phone'],
-        district = json['district'];
+        district = json['district'],
+        active = false;
 
   @override
   String toString() {
     return 'School{timestamp: $timestamp, id: $id, name: $name, abr: $abr, address: $address, city: $city, state: $state, zip_code: $zip_code, phone: $phone, district: $district}';
+  }
+
+  Map<String, dynamic> toMap() {
+    return {
+      'name': name,
+      'address': address,
+      'city': city,
+      'state': state,
+      'district': district,
+      'abbreviation': abr,
+      'phone': phone,
+      'zipcode': zip_code,
+      'active': active,
+    };
   }
 }
 
