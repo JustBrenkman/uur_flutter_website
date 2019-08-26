@@ -1,5 +1,6 @@
 import 'dart:html';
 
+import 'package:firebase/firebase.dart';
 import 'package:flutter_web/material.dart';
 import 'package:uur_flutter_website/font_awesome/font_awesome_flutter.dart';
 import 'package:uur_flutter_website/provider/provider.dart';
@@ -10,10 +11,21 @@ import 'package:uur_flutter_website/src/managers/data_manager.dart';
 import 'package:uur_flutter_website/src/pages/sign_in_up_page.dart';
 
 void main() {
+  initializeApp(
+    apiKey: "AIzaSyDYUeWo3Ry60oZDTLBCVVjo1laZpK4r0x0",
+    authDomain: "uur-website.firebaseapp.com",
+    databaseURL: "https://uur-website.firebaseio.com",
+    projectId: "uur-website",
+    storageBucket: "",
+    messagingSenderId: "308322994523",
+    name: "UUR Website"
+  );
+
   DataManager _manager = DataManager.instance;
   _manager.loadResources();
   window.document.querySelector("#loading").remove();
 //  _manager.removeLocalStorageEntry('auth_token');
+
   runApp(
       ChangeNotifierProvider<DataManager>(
         child: ChangeNotifierProvider<StateManager>(

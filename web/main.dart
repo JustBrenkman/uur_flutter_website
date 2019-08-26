@@ -3,6 +3,8 @@
 // found in the LICENSE file.
 import 'package:flutter_web_ui/ui.dart' as ui;
 import 'package:uur_flutter_website/main.dart' as app;
+import 'package:firebase/firebase.dart';
+
 
 main() async {
   await ui.webOnlyInitializePlatform();

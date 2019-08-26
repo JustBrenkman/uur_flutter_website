@@ -3,6 +3,9 @@ import 'dart:html';
 import 'package:flutter_web/material.dart';
 import 'package:flutter_web/widgets.dart';
 
+import 'package:jaguar_jwt/jaguar_jwt.dart';
+import 'package:firebase/firebase.dart';
+
 import '../server.dart';
 
 class DataManager with ChangeNotifier {
@@ -17,11 +20,11 @@ class DataManager with ChangeNotifier {
   }
 
   void loadResources() async {
-    loadUsersData();
-    loadSchoolsData();
-    loadCompetitionsData();
-    loadTeamsData();
-    loadSchoolsTeamData();
+    await loadUsersData();
+    await loadSchoolsData();
+    await loadCompetitionsData();
+    await loadTeamsData();
+    await loadSchoolsTeamData();
   }
 
   void loadUsersData() async {
