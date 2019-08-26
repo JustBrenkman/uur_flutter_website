@@ -1,5 +1,7 @@
+import 'package:firebase/firestore.dart';
 import 'package:flutter_web/material.dart';
 import 'package:flutter_web/widgets.dart';
+import 'package:firebase/firebase.dart';
 import 'package:uur_flutter_website/provider/provider.dart';
 import 'package:uur_flutter_website/src/managers/state_manager.dart';
 

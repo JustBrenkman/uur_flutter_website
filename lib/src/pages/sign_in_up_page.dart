@@ -23,10 +23,10 @@ class _LoginPageState extends State<LoginPage> {
   @override
   void initState() {
     super.initState();
-    _emailFocusNode = new FocusNode();
-    _passwordFocusnode = new FocusNode();
-    _emailController = new TextEditingController();
-    _passwordController = new TextEditingController();
+    _emailFocusNode = FocusNode();
+    _passwordFocusnode = FocusNode();
+    _emailController = TextEditingController();
+    _passwordController = TextEditingController();
   }
 
   @override

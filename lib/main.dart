@@ -1,7 +1,5 @@
 import 'dart:html';
 
-import 'package:firebase/firebase.dart';
-import 'package:firebase/firestore.dart' as fs;
 import 'package:flutter_web/material.dart';
 import 'package:uur_flutter_website/font_awesome/font_awesome_flutter.dart';
 import 'package:uur_flutter_website/provider/provider.dart';
@@ -12,20 +10,6 @@ import 'package:uur_flutter_website/src/managers/data_manager.dart';
 import 'package:uur_flutter_website/src/pages/sign_in_up_page.dart';
 
 void main() {
-
-  Database db = database();
-
-
-  fs.Firestore store = firestore();
-  fs.CollectionReference ref = store.collection("test");
-
-  ref.onSnapshot.listen((querySnapshot) {
-    querySnapshot.forEach((doc) {
-      print(doc.id);
-      print(doc.data().toString());
-    });
-  });
-
   DataManager _manager = DataManager.instance;
   _manager.loadResources();
   window.document.querySelector("#loading").remove();
