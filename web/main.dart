@@ -7,6 +7,18 @@ import 'package:firebase/firebase.dart';
 
 
 main() async {
+
+  App fireApp = initializeApp(
+      apiKey: "AIzaSyDYUeWo3Ry60oZDTLBCVVjo1laZpK4r0x0",
+      authDomain: "uur-website.firebaseapp.com",
+      databaseURL: "https://uur-website.firebaseio.com",
+      projectId: "uur-website",
+      storageBucket: "",
+      messagingSenderId: "308322994523",
+  );
+
+  print(fireApp.jsObject.name);
+
   await ui.webOnlyInitializePlatform();
   app.main();
 }
